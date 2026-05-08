@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Tents - Travel Supplies</title>
+    <link rel="stylesheet" href="TT.css">
+    <script src="TT.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Travel Trove - Camping Tents</h1>
+        <nav>
+            <a href="TT.html">Home</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section id="camping-tents" class="product-list">
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/51ITjW1PwDL._SX300_SY300_QL70_FMwebp_.jpg" alt="Camping Tent">
+            <h2>Camping Tent 1</h2>
+            <p>$15/day</p>
+            <button class="rent-now" onclick="addToCart('Camping Tent 1')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/41ySyptAF0L._SX300_SY300_QL70_FMwebp_.jpg" alt="Camping Tent">
+            <h2>Camping Tent 2</h2>
+            <p>$18/day</p>
+            <button class="rent-now" onclick="addToCart('Camping Tent 2')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/519gXP3QyRL._SX300_SY300_QL70_FMwebp_.jpg" alt="Camping Tent">
+            <h2>Camping Tent 3</h2>
+            <p>$18/day</p>
+            <button class="rent-now" onclick="addToCart('Camping Tent 3')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/51CzC3-cGvS._AC_UF894,1000_QL80_.jpg" alt="Camping Tent">
+            <h2>Camping Tent 4</h2>
+            <p>$18/day</p>
+            <button class="rent-now" onclick="addToCart('Camping Tent 4')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61s7h8x4wPL.jpg" alt="Camping Tent">
+            <h2>Camping Tent 5</h2>
+            <p>$18/day</p>
+            <button class="rent-now" onclick="addToCart('Camping Tent 5')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi5LiLHMr1B1y5IN0isI-WHkFgKEe6XGTCsw&s" alt="Camping Tent">
+            <h2>Camping Tent 6</h2>
+            <p>$18/day</p>
+            <button class="rent-now" onclick="addToCart('Camping Tent 6')">Rent Now</button>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <div id="cart-container" style="display: none; background-color: #f4f4f4; padding: 20px; border: 1px solid #ddd;">
+        <h3>Your Cart</h3>
+        <!-- Cart items will be dynamically added here -->
+    </div>
+
+</body>
+</html>

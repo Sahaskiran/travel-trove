@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Trove</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="home-container">
+    <header>
+      <div class="header-container">
+        <h1 class="logo">Travel Trove</h1>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-icons">
+          <a href="cart.html" class="cart-emoji">🛒</a>
+          <a href="profile.html" id="profileLink" class="profile-emoji">👤 <span id="userName">User</span></a>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1>Welcome to Travel Trove</h1>
+        <p>Your adventure begins here! Explore the best destinations and create unforgettable memories.</p>
+        <a href="#products" class="btn-primary">Explore Now</a>
+      </div>
+    </div>
+
+    <section id="explore" class="features">
+      <div class="feature">
+        <h3>Top Destinations</h3>
+        <p>Discover the most popular travel spots around the world.</p>
+      </div>
+      <div class="feature">
+        <h3>Easy Booking</h3>
+        <p>Plan your trips effortlessly with our user-friendly platform.</p>
+      </div>
+      <div class="feature">
+        <h3>Best Deals</h3>
+        <p>Save big on flights, hotels, and travel packages.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2024 Travel Trove. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Set username dynamically from session storage
+    window.onload = function() {
+      const storedUserName = sessionStorage.getItem('userName');
+      const userNameElement = document.getElementById('userName');
+      userNameElement.textContent = storedUserName ? storedUserName : 'User'; // Default to "User" if no name is found
+    };
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nature's Perfect Hideaways</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('forest-background.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+    }
+
+    .book-now {
+      background: white;
+      color: black;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+
+    .main-content {
+      margin-top: 10vh;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    .lodge-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 2rem;
+      max-width: 500px;
+    }
+
+    .lodge-details {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 0;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dates {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .reserve-btn {
+      background: white;
+      color: black;
+      padding: 0.8rem 2rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="sun-icon.png" alt="Logo">
+        <span>Hideaways</span>
+      </div>
+      <div class="nav-links">
+        <a href="#">Locations</a>
+        <a href="#">Homes</a>
+        <a href="#">Amenities</a>
+        <a href="#">Contact</a>
+        <a href="#" class="book-now">Book Now</a>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <h1>Nature's<br>Perfect<br>Hideaways</h1>
+
+      <div class="lodge-card">
+        <h2>Evergreen Pine Family Lodge</h2>
+        <div class="rating">
+          <span>★ 4.7</span>
+          <span>Next 1500+ stays</span>
+        </div>
+        <div class="lodge-details">
+          <div class="dates">
+            <div>
+

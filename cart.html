@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <script src="cart.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #cartItems div {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    button {
+      margin: 10px;
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: orangered;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #ff5e00e8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Your Cart</h1>
+  
+  <div id="cartItems">
+  </div>
+
+  <button onclick="window.location.href='TT.html'">Back to Home</button>
+</body>
+</html>

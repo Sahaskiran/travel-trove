@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Supplies Rental</title>
+    <link rel="stylesheet" href="TT.css">
+    <script src="TT.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Travel Trove</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-icons">
+            <a href="cart.html" class="cart-emoji">🛒</a>
+            <a href="profile.html" id="profileLink" class="profile-emoji">👤</a>
+        </div>
+    </header>
+
+    <section id="products" class="product-list">
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/91qVLIj62WL._AC_UY1100_.jpg" alt="Backpack">
+            <h2>Travel Backpacks</h2>
+            <p>$10/day</p>
+            <button class="explore-more" onclick="window.location.href='backpacks.html'">Explore More</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images-cdn.ubuy.co.in/633b07f479734a79704aa64a-inflatable-camping-tent-with-pump-2022.jpg" alt="Tent">
+            <h2>Camping Tents</h2>
+            <p>$15/day</p>
+            <button class="explore-more" onclick="window.location.href='camping-tents.html'">Explore More</button>
+        </div>
+        <div class="product-card">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/sleeping-bag/x/i/b/213-36-free-camping-sleeping-bag-with-secret-pocket-for-winter-original-imagvz2hgeyhzmyh.jpeg?q=90&crop=false" alt="Sleeping Bag">
+            <h2>Sleeping Bags</h2>
+            <p>$8/day</p>
+            <button class="explore-more" onclick="window.location.href='sleeping-bags.html'">Explore More</button>
+        </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHkbFmViU6CnvvW4Y65bhpNM707u_-8rrn6w&s" alt="Camping Stove">
+            <h2>Camping Stoves</h2>
+            <p>$12/day</p>
+            <button class="explore-more" onclick="window.location.href='camping-stoves.html'">Explore More</button>
+        </div>
+        <div class="product-card">
+            <img src="https://cdn.thewirecutter.com/wp-content/media/2023/03/hikingboots-2048px-2820.jpg?auto=webp&quality=75&width=1024" alt="Hiking Boots">
+            <h2>Hiking Boots</h2>
+            <p>$9/day</p>
+            <button class="explore-more" onclick="window.location.href='hiking-boots.html'">Explore More</button>
+        </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/41jm-BuLC5L._SX300_SY300_QL70_FMwebp_.jpg" alt="Travel Pillow">
+            <h2>Travel Pillows</h2>
+            <p>$5/day</p>
+            <button class="explore-more" onclick="window.location.href='travel-pillows.html'">Explore More</button>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Travel Trove is your trusted partner for travel supplies rental. We offer a wide range of travel gear to make your trips more convenient and affordable.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@traveltrove.com</p>
+    </section>
+    <div id="cart-container" style="display: none; background-color: #f4f4f4; padding: 20px; border: 1px solid #ddd;">
+        <h3>Your Cart</h3>
+    </div>
+
+    <script>
+        function addToCart(name, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: name, image: image });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + " has been added to your cart!");
+        }
+        window.onload = function() {
+            const userName = sessionStorage.getItem('userName') || 'User'; 
+            const profileLink = document.getElementById('profileLink');
+            profileLink.textContent = `👤 ${userName}`;  
+        }
+        
+    </script>
+</body>
+</html>

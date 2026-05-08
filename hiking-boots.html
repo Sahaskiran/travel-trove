@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiking Boots - Travel Supplies</title>
+    <link rel="stylesheet" href="TT.css">
+    <script src="TT.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Travel Trove - Hiking Boots</h1>
+        <nav>
+            <a href="TT.html">Home</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section id="hiking-boots" class="product-list">
+        <div class="product-card">
+            <img src="https://cdn.thewirecutter.com/wp-content/media/2023/03/hikingboots-2048px-2820.jpg?auto=webp&quality=75&width=1024" alt="Hiking Boots">
+            <h2>Hiking Boots 1</h2>
+            <p>$9/day</p>
+            <button class="rent-now" onclick="addToCart('Hiking Boots 1')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://preview.redd.it/hiking-in-heritage-leather-why-i-like-a-pnw-boot-and-v0-2we4fgvqilya1.jpg?width=640&crop=smart&auto=webp&s=fb1a4ea3298c07e1a52a294fff67dbe72809701a" alt="Hiking Boots">
+            <h2>Hiking Boots 2</h2>
+            <p>$11/day</p>
+            <button class="rent-now" onclick="addToCart('Hiking Boots 2')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS8ATD1CS2k6PBWjs-vMT10dtLxvm_Hw74NRnBxQ7zJgQnfLF7LeH8yZB3tYjWY1pKEAL8fUyArgwGpX_Mmdkr_KI7IA62pvX0pVmZihV2n&usqp=CAc" alt="Hiking Boots">
+            <h2>Hiking Boots 3</h2>
+            <p>$11/day</p>
+            <button class="rent-now" onclick="addToCart('Hiking Boots 2')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ5BHkFyvoex3XjMMSQCS_8WTe6gr1tcPe4jlglE6P1l_PdY5hJ09uN1JEs0m3p3I28DzgHUnQEgvQ0tlXjopDqgofgNLOiIrtFQGbw3qJC4iz91o1qEB4w6riiw04bobPLN02u9NIbpA&usqp=CAc" alt="Hiking Boots">
+            <h2>Hiking Boots 4(Women)</h2>
+            <p>$11/day</p>
+            <button class="rent-now" onclick="addToCart('Hiking Boots 2')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgA19FgXgtHQQqaaa1xU6dZc_IEOLcAiTeCQ&s" alt="Hiking Boots">
+            <h2>Hiking Boots (Leather)</h2>
+            <p>$11/day</p>
+            <button class="rent-now" onclick="addToCart('Hiking Boots 2')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdWKDDf8u-TJCFRHywXYQ0sN3dW9FowC4KuQ&s" alt="Hiking Boots">
+            <h2>Hiking Boots 6</h2>
+            <p>$11/day</p>
+            <button class="rent-now" onclick="addToCart('Hiking Boots 2')">Rent Now</button>
+        </div>
+    </section>
+    <div id="cart-container" style="display: none; background-color: #f4f4f4; padding: 20px; border: 1px solid #ddd;">
+        <h3>Your Cart</h3>
+        <!-- Cart items will be dynamically added here -->
+    </div>
+</body>
+</html>

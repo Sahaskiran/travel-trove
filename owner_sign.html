@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Trove - Owner Sign In / Sign Up</title>
+  <link rel="stylesheet" href="sign.css">
+  <script src="sign.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Travel Trove</h1>
+      <h1>Owner Portal</h1>
+    </header>
+    <div class="form-container">
+      <div class="toggle-buttons">
+        <button id="signInBtn" onclick="showSignIn()">Sign In</button>
+        <button id="signUpBtn" onclick="showSignUp()">Sign Up</button>
+      </div>
+      <form id="signInForm" class="form" onsubmit="return signIn(event)">
+        <label for="signInIdentifier">Email/Username</label>
+        <input type="text" id="signInIdentifier" placeholder="Enter your email or username" required>
+        <label for="signInPassword">Password</label>
+        <div class="password-container">
+          <input type="password" id="signInPassword" placeholder="Enter your password" required>
+          <span class="toggle-password" onclick="togglePasswordVisibility('signInPassword')" aria-label="Toggle password visibility">👁️</span>
+        </div>
+        <button type="submit" class="submit-btn">Sign In</button>
+        <p class="switch-form">Don't have an account? <span onclick="showSignUp()">Sign Up</span></p>
+      </form>
+      <form id="signUpForm" class="form" style="display: none;" onsubmit="return signUp(event)">
+        <label for="signUpName">User Name</label>
+        <input type="text" id="signUpName" placeholder="Enter your name" required>        
+        <label for="signUpEmail">Email</label>
+        <input type="email" id="signUpEmail" placeholder="Enter your email" required>        
+        <label for="signUpPassword">Password</label>
+        <div class="password-container">
+          <input type="password" id="signUpPassword" placeholder="Enter your password" required>
+          <span class="toggle-password" onclick="togglePasswordVisibility('signUpPassword')" aria-label="Toggle password visibility">👁️</span>
+        </div>        
+        <button type="submit" class="submit-btn">Sign Up</button>
+        <p class="switch-form">Already have an account? <span onclick="showSignIn()">Sign In</span></p>
+      </form>
+      <div class="social-login">
+        <button class="social-btn google-btn">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaa2hwiG4o2vVy3yYZKTBDlqkTuQ0n3KEL2w&s" alt="Google Logo" />
+          Sign in with Google
+        </button>
+        <button class="social-btn apple-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" />
+          Sign in with Apple
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function showSignIn() {
+      document.getElementById("signInForm").style.display = "block";
+      document.getElementById("signUpForm").style.display = "none";
+    }
+
+    function showSignUp() {
+      document.getElementById("signInForm").style.display = "none";
+      document.getElementById("signUpForm").style.display = "block";
+    }
+
+    function signUp(event) {
+      event.preventDefault();
+      const userName = document.getElementById("signUpName").value;
+      const email = document.getElementById("signUpEmail").value;
+      const password = document.getElementById("signUpPassword").value;
+      localStorage.setItem("ownerUserName", userName);
+      localStorage.setItem("ownerEmail", email);
+      localStorage.setItem("ownerPassword", password);
+      sessionStorage.setItem("ownerUserName", userName);
+      window.location.href = "TT.html";
+    }
+
+    function signIn(event) {
+      event.preventDefault();
+      const identifier = document.getElementById("signInIdentifier").value;
+      const password = document.getElementById("signInPassword").value;
+      const savedEmail = localStorage.getItem("ownerEmail");
+      const savedPassword = localStorage.getItem("ownerPassword");
+      const savedUserName = localStorage.getItem("ownerUserName");
+      if ((identifier === savedEmail || identifier === savedUserName) && password === savedPassword) {
+        sessionStorage.setItem("ownerUserName", savedUserName);
+        window.location.href = "TT.html";
+      } else {
+        alert("Incorrect email/username or password");
+      }
+    }
+
+    function togglePasswordVisibility(inputId) {
+      const passwordInput = document.getElementById(inputId);
+      passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    }
+
+    // Display welcome message on the dashboard page (TT.html)
+    window.onload = function () {
+      const ownerUserName = sessionStorage.getItem("ownerUserName");
+
+      if (ownerUserName) {
+        document.getElementById("welcomeMessage").textContent = `Welcome, ${ownerUserName}!`;
+      } else {
+        document.getElementById("welcomeMessage").textContent = "Welcome, Guest!";
+      }
+    };
+
+    // Log out function to clear session storage
+    function logOut() {
+      sessionStorage.clear();
+      window.location.href = "owner_sign.html";
+    }
+  </script>
+</body>
+</html>

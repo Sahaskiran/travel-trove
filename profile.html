@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <div class="profile-container">
+    <header class="profile-header">
+      <button class="back-btn" onclick="redirectToHome()">←</button>
+      <h1>Profile</h1>
+      <button class="settings-btn">⚙️</button>
+    </header>
+
+    <section class="profile-section">
+      <h2 class="profile-name" id="profile-name"></h2>
+    </section>
+
+    <section class="account-options">
+      <h3>My Account</h3>
+      <ul>
+        <li><span>🔔</span> Notification <span>→</span></li>
+        <li><span>💳</span> Payment <span>→</span></li>
+        <li onclick="redirectToCart()"><span>🛒</span> My Cart <span>→</span></li>
+        <li><span>❤️</span> Wish List <span>→</span></li>
+        <li><span>🔒</span> Password <span>→</span></li>
+      </ul>
+
+      <!-- Logout button added here -->
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </section>
+  </div>
+
+  <script>
+    const username = sessionStorage.getItem('userName') || 'User';
+    document.getElementById('profile-name').textContent = username;
+
+    function redirectToHome() {
+      window.location.href = 'home.html'; 
+    }
+
+    function redirectToCart() {
+      window.location.href = 'cart.html'; 
+    }
+
+    function logout() {
+      sessionStorage.clear(); 
+      window.location.href = 'sign.html'; 
+    }
+  </script>
+</body>
+</html>

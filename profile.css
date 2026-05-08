@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e6fa;
+    min-height: 100vh;
+  }
+
+  .profile-container {
+    background-color: white;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: orangered;
+    color: white;
+    padding: 15px;
+  }
+  
+  .profile-header h1 {
+    font-size: 1.2em;
+  }
+  
+  .back-btn,
+  .settings-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile-name {
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  /* Account Options */
+  .account-options {
+    padding: 20px;
+  }
+  
+  .account-options h3 {
+    font-size: 1em;
+    color: #888;
+    margin-bottom: 15px;
+  }
+  
+  .account-options ul {
+    list-style: none;
+  }
+  
+  .account-options li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    font-size: 1em;
+    color: orangered;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .account-options li:hover {
+    background-color: #f3f3f3;
+  }
+  
+  /* Logout Button */
+  .logout-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: orangered;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-btn:hover {
+    background-color: #e05500; 
+  }
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    background-color: orangered;
+    color: white;
+  }
+  
+  .bottom-nav span {
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  

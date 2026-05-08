@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Tents - Travel Supplies</title>
+    <link rel="stylesheet" href="TT.css">
+    <script src="TT.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Travel Trove - Backpacks</h1>
+        <nav>
+            <a href="TT.html">Home</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section id="camping-tents" class="product-list">
+        <div class="product-card">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.miLCZBvXKLZAhiJsg6HLtwAAAA&pid=Api&P=0&h=180" alt="Backpack">
+            <h2>Backpack 1</h2>
+            <p>$15/day</p>
+            <button class="rent-now" onclick="addToCart('Backpack 1')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.XIadN2_oINQqoBg0z7fjUAHaIz&pid=Api&P=0&h=180" alt="Backpack">
+            <h2>Backpack 2</h2>
+            <p>$18/day</p>
+            <button class="rent-now" onclick="addToCart('Backpack 2')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/61BieK8sJnL._AC_UX679_.jpg" alt="Backpack">
+            <h2>Backpack 3</h2>
+            <p>$18/day</p>
+            <button class="rent-now" onclick="addToCart('Backpack 3')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://media.list.ly/production/958385/4474527/4474527-high-sierra-long-trail-90l-top-load-internal-frame-backpack_600px.jpeg?ver=8624792192" alt="Backpack">
+            <h2>Backpack 4</h2>
+            <p>$18/day</p>
+            <button class="rent-now" onclick="addToCart('Backpack 4')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://tse3.mm.bing.net/th?id=OIP.NuEBeaGRWTMCOeVadDJA5wHaHa&pid=Api&P=0&h=180" alt="Backpack">
+            <h2>Backpack 5</h2>
+            <p>$18/day</p>
+            <button class="rent-now" onclick="addToCart('Backpack 5')">Rent Now</button>
+        </div>
+        <div class="product-card">
+            <img src="https://tshop.r10s.com/93b/7eb/49bd/a7af/500c/a7e4/71ae/11a3e7892f54ab3a2959e4.jpg" alt="Backpack">
+            <h2>Backpack 6</h2>
+            <p>$18/day</p>
+            <button class="rent-now" onclick="addToCart('Backpack 6')">Rent Now</button>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <div id="cart-container" style="display: none; background-color: #f4f4f4; padding: 20px; border: 1px solid #ddd;">
+        <h3>Your Cart</h3>
+        <!-- Cart items will be dynamically added here -->
+    </div>
+
+
+</body>
+</html>

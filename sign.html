@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Trove - Sign In / Sign Up</title>
+  <link rel="stylesheet" href="sign.css">
+  <script src="sign.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Travel Trove</h1>
+    </header>
+    <div id="roleModal" class="modal">
+      <h3>Select Your Role</h3>
+      <button onclick="selectRole('Customer')" aria-label="Select Customer Role">Customer</button>
+      <button onclick="selectRole('Owner')" aria-label="Select Owner Role">Owner</button>
+    </div>
+    <div class="form-container" id="formContainer" style="display: none;">
+      <div class="toggle-buttons">
+        <button id="signInBtn" onclick="showSignIn()">Sign In</button>
+        <button id="signUpBtn" onclick="showSignUp()">Sign Up</button>
+      </div>
+      <form id="signInForm" class="form" onsubmit="return signIn(event)">
+        <label for="signInIdentifier">Email/Username</label>
+        <input type="text" id="signInIdentifier" placeholder="Enter your email or username" required>
+        <label for="signInPassword">Password</label>
+        <div class="password-container">
+          <input type="password" id="signInPassword" placeholder="Enter your password" required>
+          <span class="toggle-password" onclick="togglePasswordVisibility('signInPassword')" aria-label="Toggle password visibility">👁️</span>
+        </div>
+        <button type="submit" class="submit-btn">Sign In</button>
+        <p class="switch-form">Don't have an account? <span onclick="showSignUp()">Sign Up</span></p>
+      </form>
+      <form id="signUpForm" class="form" style="display: none;" onsubmit="return signUp(event)">
+        <label for="signUpName">User Name</label>
+        <input type="text" id="signUpName" placeholder="Enter your name" required>        
+        <label for="signUpEmail">Email</label>
+        <input type="email" id="signUpEmail" placeholder="Enter your email" required>        
+        <label for="signUpPassword">Password</label>
+        <div class="password-container">
+          <input type="password" id="signUpPassword" placeholder="Enter your password" required>
+          <span class="toggle-password" onclick="togglePasswordVisibility('signUpPassword')" aria-label="Toggle password visibility">👁️</span>
+        </div>        
+        <button type="submit" class="submit-btn">Sign Up</button>
+        <p class="switch-form">Already have an account? <span onclick="showSignIn()">Sign In</span></p>
+      </form>
+      <div class="social-login">
+        <button class="social-btn google-btn">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaa2hwiG4o2vVy3yYZKTBDlqkTuQ0n3KEL2w&s" alt="Google Logo" />
+          Sign in with Google
+        </button>
+        <button class="social-btn apple-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Logo" />
+          Sign in with Apple
+        </button>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.onload = function () {
+      const role = sessionStorage.getItem("role");
+      document.getElementById("roleModal").style.display = role ? "none" : "block";
+      document.getElementById("formContainer").style.display = role === "Customer" ? "block" : "none";
+    };
+
+    function selectRole(role) {
+      sessionStorage.setItem("role", role);
+      if (role === "Owner") {
+        window.location.href = "owner_sign.html";
+      } else {
+        document.getElementById("roleModal").style.display = "none";
+        document.getElementById("formContainer").style.display = "block";
+      }
+    }
+
+    function showSignIn() {
+      document.getElementById("signInForm").style.display = "block";
+      document.getElementById("signUpForm").style.display = "none";
+    }
+
+    function showSignUp() {
+      document.getElementById("signInForm").style.display = "none";
+      document.getElementById("signUpForm").style.display = "block";
+    }
+
+    function signUp(event) {
+      event.preventDefault();
+      const userName = document.getElementById("signUpName").value;
+      const email = document.getElementById("signUpEmail").value;
+      const password = document.getElementById("signUpPassword").value;
+      localStorage.setItem("userName", userName);
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
+      sessionStorage.setItem("userName", userName);
+      window.location.href = "home.html";
+    }
+
+    function signIn(event) {
+      event.preventDefault();
+      const identifier = document.getElementById("signInIdentifier").value;
+      const password = document.getElementById("signInPassword").value;
+      const savedEmail = localStorage.getItem("email");
+      const savedPassword = localStorage.getItem("password");
+      const savedUserName = localStorage.getItem("userName");
+      if ((identifier === savedEmail || identifier === savedUserName) && password === savedPassword) {
+        sessionStorage.setItem("userName", savedUserName);
+        window.location.href = "home.html";
+      } else {
+        alert("Incorrect email/username or password");
+      }
+    }
+
+    function togglePasswordVisibility(inputId) {
+      const passwordInput = document.getElementById(inputId);
+      passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>
+
